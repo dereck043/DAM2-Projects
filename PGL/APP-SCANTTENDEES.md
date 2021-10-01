@@ -8,4 +8,4 @@
   
   
   
-<img src="https://github.com/dereck043/DAM2-Projects/blob/master/PGL/ScAnttendees.drawio.png">
+<img src="https://github.com/dereck043/DAM2-Projects/blob/master/PGL/ScAnttendees.png">
