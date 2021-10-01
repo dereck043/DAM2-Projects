@@ -1,3 +1,4 @@
+<div align="justify">
 <h4>Definición de App personal<h4>
 <hr>
 <h1> ⛁ ScAnttendees ⛁ </h1> 
@@ -8,4 +9,8 @@
   
   
  <h3>Modelo DDBB:</h3>
-<img src="https://github.com/dereck043/DAM2-Projects/blob/master/PGL/App-ScAnttendees/img/ScAnttendees.drawio.png">
+  <div align="center">
+    <img src="https://github.com/dereck043/DAM2-Projects/blob/master/PGL/App-ScAnttendees/img/ScAnttendees.drawio.png">
+  </div>
+
+  </div>
