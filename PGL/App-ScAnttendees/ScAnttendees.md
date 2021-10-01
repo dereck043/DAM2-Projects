@@ -8,4 +8,4 @@
   
   
  <h3>Modelo DDBB:</h3>
-<img src="https://github.com/dereck043/DAM2-Projects/blob/master/PGL/IMG/ScAnttendees.png">
+<img src="https://github.com/dereck043/DAM2-Projects/blob/master/PGL/App-ScAnttendees/img/ScAnttendees.png">
