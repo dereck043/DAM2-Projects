@@ -1,0 +1,11 @@
+Clase Tarea:
+	Atributos: Nombre (string), fecha (date)
+	Métodos: constructor, getNombre, setNombre, getFecha, setFecha
+
+Clase Controlador:
+	Atributos: Tareas (arraylist de tipo tarea)
+	Métodos: getTareas, setTareas, iniciador, leerTareas, escribirTareas, todasLasTareas
+
+Clase Vista:
+	Atributos: controller (instanciacion de la clase controlador) 
+	Métodos: agregar, guardarTarea, verTodo
