@@ -19,6 +19,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.LoginApp" >
         <activity
+            android:name="es.iespuerto.dc.MainActivityPaginaPrincipal"
+            android:exported="false" />
+        <activity
             android:name="es.iespuerto.dc.MainActivity"
             android:exported="true" >
             <intent-filter>
