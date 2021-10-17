@@ -13,21 +13,21 @@ import es.iespuerto.dc.view.ILoginView;
 
 public class MainActivity extends AppCompatActivity implements ILoginView {
 
-    EditText email,password;
+    EditText nombreUsuario,clave;
     Button loginb;
     ILoginController loginPresenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        email = (EditText) findViewById(R.id.email);
-        password = (EditText)findViewById(R.id.password);
+        nombreUsuario = (EditText) findViewById(R.id.email);
+        clave = (EditText)findViewById(R.id.password);
         loginb = (Button) findViewById(R.id.loginb);
         loginPresenter = new LoginController(this);
         loginb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginPresenter.OnLogin(email.getText().toString().trim(),password.getText().toString().trim());
+                loginPresenter.OnLogin(nombreUsuario.getText().toString().trim(),clave.getText().toString().trim());
             }
         });
     }

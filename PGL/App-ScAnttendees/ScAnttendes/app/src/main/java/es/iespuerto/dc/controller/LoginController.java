@@ -1,6 +1,9 @@
 package es.iespuerto.dc.controller;
 
-import es.iespuerto.dc.model.User;
+import android.text.TextUtils;
+import android.util.Patterns;
+
+import es.iespuerto.dc.model.Usuario;
 import es.iespuerto.dc.view.ILoginView;
 
 public class LoginController implements ILoginController {
@@ -12,13 +15,12 @@ public class LoginController implements ILoginController {
 
     /**
      * Funcion que valida los parametros introducidos por el usuario
-     * @param email del usuario
-     * @param password del usuario
+     * @param nombreUsuario del usuario
+     * @param clave del usuario
      */
     @Override
-    public void OnLogin(String email, String password) {
-        User user = new User(email,password);
-        int loginCode = user.isValid();
+    public void OnLogin(String nombreUsuario, String clave) {
+        int loginCode = isValid(nombreUsuario,clave);
         switch(loginCode) {
             case 0 :
                 loginView.OnLoginError("Por favor introduce un Email");
@@ -35,5 +37,25 @@ public class LoginController implements ILoginController {
             default :
                 loginView.OnLoginSuccess("Login correcto");
         }
+    }
+
+    /**
+     * Funcion que verifica si los datos ingresados son validos para verificar  al usuario
+     * @return (-1..2)
+     *  0. nombreUsuario vacio
+     *  1. clave vacio
+     *  2. clave <= 6
+     * -1. Ok
+     */
+
+    public int isValid(String nombreUsuario, String clave) {
+        if(TextUtils.isEmpty(nombreUsuario))
+            return  0;
+        else if(TextUtils.isEmpty(clave))
+            return 1;
+        else if(clave.length()<=6)
+            return 2;
+        else
+            return -1;
     }
 }
