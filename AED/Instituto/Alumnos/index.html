@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Gestion Instituto</title>
+    <!-- Bootstrap's Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      .grayText{
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row container-fluid mt-5">
+      <div class="col-12">
+
+        <div class="card">
+          <div class="card-body">
+                <h1 class="display-4 card-title">Gestionar Instituto</h1>
+                <h2 class="mt-3 grayText">Alumnos</h2>
+                <p class="lead grayText">Bienvenido a la página de gestionamiento de Alumnos</p>
+                <hr class="my-4">
+
+                <div class="row">
+                  <div class="col-sm-12 col-md-4">
+                    <div class="list-group" id="list-tab" role="tablist">
+                      <a class="list-group-item list-group-item-action active" id="list-agregar-list" data-toggle="list" href="#list-agregar" role="tab" aria-controls="agregar">Agregar Alumno</a>
+                      <a class="list-group-item list-group-item-action" id="list-borrar-list" data-toggle="list" href="#list-borrar" role="tab" aria-controls="borrar">Borrar Alumno</a>
+                      <a class="list-group-item list-group-item-action" id="list-editar-list" data-toggle="list" href="#list-editar" role="tab" aria-controls="editar">Editar Alumno</a>
+                      <a class="list-group-item list-group-item-action" id="list-mostrar-list" data-toggle="list" href="#list-mostrar" role="tab" aria-controls="mostrar">Mostrar Alumnos</a>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-8">
+                    <div class="tab-content" id="nav-tabContent">
+
+                      <!-- Seccion de agregar alumnos -->
+                      <div class="tab-pane fade show active" id="list-agregar" role="tabpanel" aria-labelledby="list-agregar-list">
+                          <form>
+                            <div class="form-group row">
+                              <label for="nombreAgregar" class="col-sm-2 col-form-label">Nombre</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="nombreAgregar" value="" required>
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="apellidoAgregar" class="col-sm-2 col-form-label">Apellido</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="apellidoAgregar" value="">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="inputNacimientoAgregar" class="col-sm-2 col-form-label">Nacimiento</label>
+                              <div class="col-sm-10">
+                                <input type="date" class="form-control" id="inputNacimientoAgregar" >
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="dniAgregar" class="col-sm-2 col-form-label">DNI</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="dniAgregar" >
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <div class="col-sm-2"></div>
+                              <div class="col-sm-10">
+                                  <button type="submit" class="btn btn-primary btn-lg form-control" role="button">Agregar</button>
+                              </div>
+                            </div>
+                          </form>
+                      </div>
+
+                      <!-- Seccion de borrar alumnos -->
+                      <div class="tab-pane fade" id="list-borrar" role="tabpanel" aria-labelledby="list-borrar-list">
+                        <form>
+                          <div class="form-group row">
+                            <label for="dniBorrar" class="col-sm-2 col-form-label">DNI</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="dniBorrar" >
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary btn-lg form-control" role="button">Editar</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+
+                      <!-- Seccion de editar alumnos -->
+                      <div class="tab-pane fade" id="list-editar" role="tabpanel" aria-labelledby="list-editar-list">
+                        <form>
+                          <div class="form-group row">
+                            <label for="nombreEditar" class="col-sm-2 col-form-label">Nombre</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="nombreEditar" value="" required>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="apellidoEditar" class="col-sm-2 col-form-label">Apellido</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="apellidoEditar" value="">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="inputNacimientoEditar" class="col-sm-2 col-form-label">Nacimiento</label>
+                            <div class="col-sm-10">
+                              <input type="date" class="form-control" id="inputNacimientoEditar" >
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="dniEditar" class="col-sm-2 col-form-label">DNI</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="dniEditar" >
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary btn-lg form-control" role="button">Editar</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+
+                      <!-- Seccion de mostrar alumnos -->
+                      <div class="tab-pane fade" id="list-mostrar" role="tabpanel" aria-labelledby="list-mostrar-list">
+                        <form>
+                          <div class="form-group row">
+                            <label for="nombreEditar" class="col-sm-2 col-form-label">Nombre</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="nombreEditar" value="" required>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="dniEditar" class="col-sm-2 col-form-label">DNI</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="dniEditar" >
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary btn-lg form-control" role="button">Editar</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <!-- Bootstrap's Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
