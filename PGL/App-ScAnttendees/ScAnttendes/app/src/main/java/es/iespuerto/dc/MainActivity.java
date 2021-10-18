@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements ILoginView {
     }
     @Override
     public void OnLoginSuccess(String message) {
+        setContentView(R.layout.activity_main_pagina_principal);
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
     @Override
