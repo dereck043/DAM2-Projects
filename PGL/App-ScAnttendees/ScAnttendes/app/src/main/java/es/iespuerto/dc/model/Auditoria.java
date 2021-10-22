@@ -1,6 +1,6 @@
 package es.iespuerto.dc.model;
 
-public class Auditoria {
+public class Auditoria implements IAuditoria{
     private int idAuditoria;
     private String accion, descripcion, tabla, usuario;
     private String fecha;

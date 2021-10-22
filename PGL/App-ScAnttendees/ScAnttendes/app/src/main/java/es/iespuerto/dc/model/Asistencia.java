@@ -2,7 +2,7 @@ package es.iespuerto.dc.model;
 
 import java.util.Date;
 
-public class Asistencia {
+public class Asistencia implements IAsistencia{
     private int idAsistencia, idColaborador, idAlumno;
     private Date fecha;
     private String tipoAsistencia;

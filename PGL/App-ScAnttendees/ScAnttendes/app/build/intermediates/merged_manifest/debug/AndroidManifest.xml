@@ -20,7 +20,7 @@
         android:theme="@style/Theme.LoginApp" >
         <activity
             android:name="es.iespuerto.dc.MainActivityPaginaPrincipal"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name="es.iespuerto.dc.MainActivity"
             android:exported="true" >

@@ -10,21 +10,26 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:text="Loggeado exitosamente"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="356dp" />
-=======
+        android:layout_marginStart="109dp"
+        android:layout_marginTop="237dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="399dp"
         android:text="Te has loggeado exitosamente"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="27dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGoToLogin" />
 
     <Button
         android:id="@+id/buttonGoToLogin"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="257dp"
         android:text="volver atras"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="466dp" />
->>>>>>> cdca2c6cfb02954726d7610741e44544b0a892ab
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

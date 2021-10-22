@@ -2,7 +2,7 @@ package es.iespuerto.dc.model;
 
 import java.util.Date;
 
-public class Alumno {
+public class Alumno implements IAlumno{
     private int idAlumno, idTutor, idTipoMensaje, telefono, codigoPostal;
     private String nombre, apellido, nombreUsuario, clave, email, direccion, curso, dni;
     private Date fechaNacimiento;
@@ -73,13 +73,9 @@ public class Alumno {
         return apellido;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+    public void setApellido(String apellido) { this.apellido = apellido; }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
+    public String getNombreUsuario() { return nombreUsuario; }
 
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;

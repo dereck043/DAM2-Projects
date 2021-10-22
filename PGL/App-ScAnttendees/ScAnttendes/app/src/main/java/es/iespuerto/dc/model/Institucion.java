@@ -2,7 +2,7 @@ package es.iespuerto.dc.model;
 
 import es.iespuerto.dc.controller.gestorUsuariosController;
 
-public class Institucion {
+public class Institucion implements IInstitucion {
     gestorUsuariosController commonContUsers;
     private int idInstitucion, codigoPostal, telefono;
     private String email, nombre, nombreUsuario, direccion, clave;

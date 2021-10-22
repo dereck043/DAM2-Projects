@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity implements ILoginView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        nombreUsuario = (EditText) findViewById(R.id.email);
-        clave = (EditText)findViewById(R.id.password);
+        nombreUsuario = (EditText) findViewById(R.id.Usuario);
+        clave = (EditText)findViewById(R.id.Clave);
         loginb = (Button) findViewById(R.id.loginb);
         loginPresenter = new LoginController(this);
         loginb.setOnClickListener(new View.OnClickListener() {

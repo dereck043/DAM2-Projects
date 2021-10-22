@@ -1,6 +1,6 @@
 package es.iespuerto.dc.model;
 
-public class TipoMensaje {
+public class TipoMensaje implements ITipoMensaje{
     private int idTipoMensaje;
     private int descripcion;
 

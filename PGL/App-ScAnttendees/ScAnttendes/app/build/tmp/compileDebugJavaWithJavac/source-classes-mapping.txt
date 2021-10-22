@@ -1,5 +1,6 @@
 es/iespuerto/dc/MainActivityPaginaPrincipal.java
  es.iespuerto.dc.MainActivityPaginaPrincipal
+ es.iespuerto.dc.MainActivityPaginaPrincipal$1
 es/iespuerto/dc/model/IUsuario.java
  es.iespuerto.dc.model.IUsuario
 es/iespuerto/dc/model/TipoMensaje.java
@@ -13,10 +14,10 @@ es/iespuerto/dc/model/Alumno.java
 es/iespuerto/dc/MainActivity.java
  es.iespuerto.dc.MainActivity
  es.iespuerto.dc.MainActivity$1
-es/iespuerto/dc/view/ILoginView.java
- es.iespuerto.dc.view.ILoginView
 es/iespuerto/dc/model/Asistencia.java
  es.iespuerto.dc.model.Asistencia
+es/iespuerto/dc/view/ILoginView.java
+ es.iespuerto.dc.view.ILoginView
 es/iespuerto/dc/controller/gestorUsuariosController.java
  es.iespuerto.dc.controller.gestorUsuariosController
 es/iespuerto/dc/BuildConfig.java

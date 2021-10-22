@@ -1,6 +1,6 @@
 package es.iespuerto.dc.model;
 
-public class Tutor {
+public class Tutor implements ITutor{
     private int idTutor, telefono, codigoPostal;
     private String nombre, apellido, email, direccion, dni;
 
