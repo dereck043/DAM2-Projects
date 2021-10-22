@@ -1,10 +1,15 @@
 package es.iespuerto.dc.model;
 
+import android.content.ContentValues;
+
 import es.iespuerto.dc.controller.gestorUsuariosController;
+import es.iespuerto.dc.model.contract.InstitucionContract;
 
 public class Institucion implements IInstitucion {
     gestorUsuariosController commonContUsers;
-    private int idInstitucion, codigoPostal, telefono;
+    private int idInstitucion;
+    private int codigoPostal;
+    private int telefono;
     private String email, nombre, nombreUsuario, direccion, clave;
 
     public Institucion(int codigoPostal, int telefono, String email, String nombre, String nombreUsuario, String direccion, String clave) {
@@ -75,6 +80,17 @@ public class Institucion implements IInstitucion {
 
     public void setClave(String clave) {
         this.clave = clave;
+    }
+
+    public ContentValues toContentValues() {
+        ContentValues values = new ContentValues();
+        values.put(InstitucionContract.UserEntry.CODIGOPOSTAL, codigoPostal);
+        values.put(InstitucionContract.UserEntry.TELEFONO, telefono);
+        values.put(InstitucionContract.UserEntry.NOMBRE, nombre);
+        values.put(InstitucionContract.UserEntry.NOMBREUSUARIO, nombreUsuario);
+        values.put(InstitucionContract.UserEntry.DIRECCION, direccion);
+        values.put(InstitucionContract.UserEntry.CLAVE, clave);
+        return values;
     }
 
 }
