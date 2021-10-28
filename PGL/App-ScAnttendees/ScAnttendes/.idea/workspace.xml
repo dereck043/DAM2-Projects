@@ -10,11 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5fbe1e7-da58-4bf9-a256-290a508d61e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/es/iespuerto/dc/model/helpers/ComunDBHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/es/iespuerto/dc/model/helpers/InstitucionDBHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/iespuerto/dc/controller/gestorUsuariosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/iespuerto/dc/controller/gestorUsuariosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/es/iespuerto/dc/model/Institucion.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/es/iespuerto/dc/model/Institucion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
