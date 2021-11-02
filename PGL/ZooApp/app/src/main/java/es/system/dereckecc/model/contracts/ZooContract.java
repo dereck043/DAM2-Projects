@@ -3,7 +3,7 @@ package es.system.dereckecc.model.contracts;
 import android.provider.BaseColumns;
 
 public class ZooContract {
-    public static abstract class UserEntry implements BaseColumns {
+    public static abstract class ZooEntry implements BaseColumns {
         public static final String TABLE_NAME ="zoo";
         public static final String IDZOO = "id_zoo";
         public static final String NOMBRE = "nombre";

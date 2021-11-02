@@ -1,13 +1,13 @@
-package es.system.dereckecc.model;
+package es.system.dereckecc.model.interface1;
 
 import java.sql.Date;
 
 public interface IAnimal {
     int getId();
 
-    int getIdZoo();
+    int getIdEspecie();
 
-    void setIdZoo(int idZoo);
+    void setIdEspecie(int idZoo);
 
     String getSexo();
 
@@ -21,7 +21,7 @@ public interface IAnimal {
 
     void setContinente(String continente);
 
-    Date getNacimiento();
+    int getNacimiento();
 
-    void setNacimiento(Date nacimiento);
+    void setNacimiento(int nacimiento);
 }

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import es.system.dereckecc.model.Zoo;
+import es.system.dereckecc.vo.Zoo;
 import es.system.dereckecc.model.contracts.ZooContract;
 
 public class ZooDbHelper extends ComunDbHelper {
@@ -18,20 +18,20 @@ public class ZooDbHelper extends ComunDbHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE " + ZooContract.UserEntry.TABLE_NAME + " ("
-                + ZooContract.UserEntry.IDZOO + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + ZooContract.UserEntry.NOMBRE + "TEXT NOT NULL, "
-                + ZooContract.UserEntry.DIMENSIONES + "INTEGER NOT NULL, "
-                + ZooContract.UserEntry.CIUDAD + " TEXT NOT NULL,"
-                + ZooContract.UserEntry.PAIS + " TEXT NOT NULL,"
-                + ZooContract.UserEntry.PRESUPUESTOANUAL + "INTEGER NOT NULL)"
+        sqLiteDatabase.execSQL(" CREATE TABLE " + ZooContract.ZooEntry.TABLE_NAME + " ( "
+                + ZooContract.ZooEntry.IDZOO + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
+                + ZooContract.ZooEntry.NOMBRE + " TEXT NOT NULL , "
+                + ZooContract.ZooEntry.PAIS + " TEXT NOT NULL , "
+                + ZooContract.ZooEntry.CIUDAD + " TEXT NOT NULL , "
+                + ZooContract.ZooEntry.DIMENSIONES + " INTEGER NOT NULL , "
+                + ZooContract.ZooEntry.PRESUPUESTOANUAL + " INTEGER NOT NULL ) "
         );
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {}
 
     public long save(Zoo zoo) {
-        return super.save(ZooContract.UserEntry.TABLE_NAME,
+        return super.save(ZooContract.ZooEntry.TABLE_NAME,
                 zoo.toContentValues());
     }
 
@@ -40,18 +40,18 @@ public class ZooDbHelper extends ComunDbHelper {
         Cursor cursor = null;
 
         try {
-            cursor = super.getAll(ZooContract.UserEntry.TABLE_NAME,
+            cursor = super.getAll(ZooContract.ZooEntry.TABLE_NAME,
                     null, null, null,
                     null, null, null);
 
             if(cursor.moveToFirst()){
                 zoo = new ArrayList<>();
                 do {
-                    @SuppressLint("Range") String nombre = cursor.getString(cursor.getColumnIndex(ZooContract.UserEntry.NOMBRE));
-                    @SuppressLint("Range") int dimensiones = cursor.getInt(cursor.getColumnIndex(ZooContract.UserEntry.DIMENSIONES));
-                    @SuppressLint("Range") String ciudad = cursor.getString(cursor.getColumnIndex(ZooContract.UserEntry.CIUDAD));
-                    @SuppressLint("Range") String pais = cursor.getString(cursor.getColumnIndex(ZooContract.UserEntry.PAIS));
-                    @SuppressLint("Range") int presupuestoAnual = cursor.getInt(cursor.getColumnIndex(ZooContract.UserEntry.PRESUPUESTOANUAL));
+                    @SuppressLint("Range") String nombre = cursor.getString(cursor.getColumnIndex(ZooContract.ZooEntry.NOMBRE));
+                    @SuppressLint("Range") int dimensiones = cursor.getInt(cursor.getColumnIndex(ZooContract.ZooEntry.DIMENSIONES));
+                    @SuppressLint("Range") String ciudad = cursor.getString(cursor.getColumnIndex(ZooContract.ZooEntry.CIUDAD));
+                    @SuppressLint("Range") String pais = cursor.getString(cursor.getColumnIndex(ZooContract.ZooEntry.PAIS));
+                    @SuppressLint("Range") int presupuestoAnual = cursor.getInt(cursor.getColumnIndex(ZooContract.ZooEntry.PRESUPUESTOANUAL));
                     Zoo zooEntries = new Zoo( nombre, pais, ciudad, dimensiones, presupuestoAnual);
                     zoo.add(zooEntries);
                 } while (cursor.moveToNext());
@@ -69,16 +69,52 @@ public class ZooDbHelper extends ComunDbHelper {
 
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public Zoo getById(String id) {
+        Zoo zoo = null;
+        Cursor cursor = null;
+        try {
+            cursor = super.getAll(ZooContract.ZooEntry.TABLE_NAME,
+                    null,
+                    ZooContract.ZooEntry.IDZOO + " = ?",
+                    new String[]{id},
+                    null,
+                    null,
+                    null);
+
+            if(cursor.moveToFirst()){
+                @SuppressLint("Range") String nombre = cursor.getString(cursor.getColumnIndex(ZooContract.ZooEntry.NOMBRE));
+                @SuppressLint("Range") int dimensiones = cursor.getInt(cursor.getColumnIndex(ZooContract.ZooEntry.DIMENSIONES));
+                @SuppressLint("Range") String ciudad = cursor.getString(cursor.getColumnIndex(ZooContract.ZooEntry.CIUDAD));
+                @SuppressLint("Range") String pais = cursor.getString(cursor.getColumnIndex(ZooContract.ZooEntry.PAIS));
+                @SuppressLint("Range") int presupuestoAnual = cursor.getInt(cursor.getColumnIndex(ZooContract.ZooEntry.PRESUPUESTOANUAL));
+                zoo = new Zoo( nombre, pais, ciudad, dimensiones, presupuestoAnual);
+            }
+        } catch (Exception exception) {
+            // TODO: Se debe de implementar el trato de las exception
+        }finally {
+            if (!cursor.isClosed()) {
+                cursor.close();
+            }
+        }
+        return zoo;
+    }
+
+
     public int delete(String id) {
-        return super.delete(UserContract.UserEntry.TABLE_NAME,
-                IdeaContract.IdeaEntry._ID + " = ?",
+        return super.delete(ZooContract.ZooEntry.TABLE_NAME,
+                ZooContract.ZooEntry._ID + " = ?",
                 new String[]{id});
     }
 
-    public int update(Idea idea, String id) {
-        return super.update(IdeaContract.IdeaEntry.TABLE_NAME,
-                idea.toContentValues(),
-                IdeaContract.IdeaEntry._ID + " = ?",
+    public int update(Zoo zoo, String id) {
+        return super.update(ZooContract.ZooEntry.TABLE_NAME,
+                zoo.toContentValues(),
+                ZooContract.ZooEntry._ID + " = ?",
                 new String[]{id});
     }
 }

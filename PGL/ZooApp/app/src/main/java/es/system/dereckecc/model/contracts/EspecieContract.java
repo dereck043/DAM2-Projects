@@ -3,7 +3,7 @@ package es.system.dereckecc.model.contracts;
 import android.provider.BaseColumns;
 
 public class EspecieContract {
-    public static abstract class UserEntry implements BaseColumns {
+    public static abstract class EspecieEntry implements BaseColumns {
         public static final String TABLE_NAME ="especie";
         public static final String IDESPECIE = "id_especie";
         public static final String NOMBREVULGAR = "nombre_vulgar";

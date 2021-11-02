@@ -1,6 +1,9 @@
-package es.system.dereckecc.model;
+package es.system.dereckecc.vo;
 
 import android.content.ContentValues;
+
+import es.system.dereckecc.model.interface1.IEspecie;
+import es.system.dereckecc.model.contracts.EspecieContract;
 
 public class Especie implements IEspecie {
     String nombreVulgar, nombreCientifico, familia;
@@ -60,6 +63,11 @@ public class Especie implements IEspecie {
     }
 
     public ContentValues toContentValues() {
-        return null;
+        ContentValues values = new ContentValues();
+        values.put(EspecieContract.EspecieEntry.NOMBREVULGAR, nombreVulgar);
+        values.put(EspecieContract.EspecieEntry.NOMBRECIENTIFICO, nombreCientifico);
+        values.put(EspecieContract.EspecieEntry.FAMILIA, familia);
+        values.put(EspecieContract.EspecieEntry.PELIGROEXTINCION, peligroExtincion);
+        return values;
     }
 }

@@ -1,7 +1,10 @@
-package es.system.dereckecc.model;
+package es.system.dereckecc.vo;
 
 import android.content.ContentValues;
 
+import java.util.Objects;
+
+import es.system.dereckecc.model.interface1.IZoo;
 import es.system.dereckecc.model.contracts.ZooContract;
 
 public class Zoo implements IZoo {
@@ -73,11 +76,22 @@ public class Zoo implements IZoo {
 
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
-        values.put(ZooContract.UserEntry.CIUDAD, ciudad);
-        values.put(ZooContract.UserEntry.PAIS, pais);
-        values.put(ZooContract.UserEntry.NOMBRE, nombre);
-        values.put(ZooContract.UserEntry.DIMENSIONES, dimensiones);
-        values.put(ZooContract.UserEntry.PRESUPUESTOANUAL, presupuestoAnual);
+        values.put(ZooContract.ZooEntry.NOMBRE, nombre);
+        values.put(ZooContract.ZooEntry.PAIS, pais);
+        values.put(ZooContract.ZooEntry.CIUDAD, ciudad);
+        values.put(ZooContract.ZooEntry.DIMENSIONES, dimensiones);
+        values.put(ZooContract.ZooEntry.PRESUPUESTOANUAL, presupuestoAnual);
         return values;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Zoo zoo = (Zoo) o;
+        return Objects.equals(nombre, zoo.nombre)
+                && Objects.equals(ciudad, zoo.ciudad)
+                && Objects.equals(pais, zoo.pais)
+                && Objects.equals(dimensiones, zoo.dimensiones)
+                && Objects.equals(presupuestoAnual, zoo.presupuestoAnual);
     }
 }

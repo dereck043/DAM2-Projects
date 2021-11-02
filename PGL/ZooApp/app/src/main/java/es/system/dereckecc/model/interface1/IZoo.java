@@ -1,4 +1,4 @@
-package es.system.dereckecc.model;
+package es.system.dereckecc.model.interface1;
 
 public interface IZoo {
     String getNombre();
