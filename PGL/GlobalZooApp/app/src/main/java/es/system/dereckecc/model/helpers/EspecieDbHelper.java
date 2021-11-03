@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import es.system.dereckecc.model.contracts.ZooContract;
 import es.system.dereckecc.vo.Especie;
-import es.system.dereckecc.vo.Zoo;
 import es.system.dereckecc.model.contracts.EspecieContract;
 
 public class EspecieDbHelper extends ComunDbHelper{
@@ -19,16 +19,19 @@ public class EspecieDbHelper extends ComunDbHelper{
     }
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE " + EspecieContract.EspecieEntry.TABLE_NAME + " ("
-                + EspecieContract.EspecieEntry.IDESPECIE + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + EspecieContract.EspecieEntry.NOMBREVULGAR + "TEXT NOT NULL, "
-                + EspecieContract.EspecieEntry.NOMBRECIENTIFICO + "TEXT NOT NULL, "
-                + EspecieContract.EspecieEntry.FAMILIA + " TEXT NOT NULL,"
-                + EspecieContract.EspecieEntry.PELIGROEXTINCION + " BOOLEAN NOT NULL)"
+        sqLiteDatabase.execSQL(" CREATE TABLE " + EspecieContract.EspecieEntry.TABLE_NAME + " ( "
+                + EspecieContract.EspecieEntry.IDESPECIE + " INTEGER PRIMARY KEY AUTOINCREMENT , "
+                + EspecieContract.EspecieEntry.NOMBREVULGAR + " TEXT NOT NULL , "
+                + EspecieContract.EspecieEntry.NOMBRECIENTIFICO + " TEXT NOT NULL , "
+                + EspecieContract.EspecieEntry.FAMILIA + " TEXT NOT NULL , "
+                + EspecieContract.EspecieEntry.PELIGROEXTINCION + " INT NOT NULL ) "
         );
     }
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {}
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + EspecieContract.EspecieEntry.TABLE_NAME );
+        onCreate(sqLiteDatabase);
+    }
 
     public long save(Especie especie) {
         return super.save(EspecieContract.EspecieEntry.TABLE_NAME,
@@ -47,11 +50,12 @@ public class EspecieDbHelper extends ComunDbHelper{
             if(cursor.moveToFirst()){
                 especies = new ArrayList<>();
                 do {
+                    @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(EspecieContract.EspecieEntry.IDESPECIE));
                     @SuppressLint("Range") String nombreVulgar = cursor.getString(cursor.getColumnIndex(EspecieContract.EspecieEntry.NOMBREVULGAR));
                     @SuppressLint("Range") String nombreCientifico = cursor.getString(cursor.getColumnIndex(EspecieContract.EspecieEntry.NOMBRECIENTIFICO));
                     @SuppressLint("Range") String familia = cursor.getString(cursor.getColumnIndex(EspecieContract.EspecieEntry.FAMILIA));
-                    @SuppressLint("Range") boolean peligroExtincion = (cursor.getInt(cursor.getColumnIndex(EspecieContract.EspecieEntry.PELIGROEXTINCION))>0);
-                    Especie especie = new Especie( nombreVulgar, nombreCientifico, familia, peligroExtincion);
+                    @SuppressLint("Range") int peligroExtincion = cursor.getInt(cursor.getColumnIndex(EspecieContract.EspecieEntry.PELIGROEXTINCION));
+                    Especie especie = new Especie(id, nombreVulgar, nombreCientifico, familia, peligroExtincion);
                     especies.add(especie);
                 } while (cursor.moveToNext());
                 return especies;
@@ -59,8 +63,10 @@ public class EspecieDbHelper extends ComunDbHelper{
         } catch (Exception exception) {}
 
         finally {
-            if (!cursor.isClosed()) {
-                cursor.close();
+            if (cursor!=null){
+                if (!cursor.isClosed()) {
+                    cursor.close();
+                }
             }
         }
 
@@ -68,24 +74,25 @@ public class EspecieDbHelper extends ComunDbHelper{
 
     }
 
-    public Especie getById(String id) {
+    public Especie getById(int id) {
         Especie especie = null;
         Cursor cursor = null;
         try {
             cursor = super.getAll(EspecieContract.EspecieEntry.TABLE_NAME,
                     null,
                     EspecieContract.EspecieEntry.IDESPECIE + " = ?",
-                    new String[]{id},
+                    new String[]{id+""},
                     null,
                     null,
                     null);
 
             if(cursor.moveToFirst()){
+                @SuppressLint("Range") int idESpecie = cursor.getInt(cursor.getColumnIndex(EspecieContract.EspecieEntry.IDESPECIE));
                 @SuppressLint("Range") String nombreVulgar = cursor.getString(cursor.getColumnIndex(EspecieContract.EspecieEntry.NOMBREVULGAR));
                 @SuppressLint("Range") String nombreCientifico = cursor.getString(cursor.getColumnIndex(EspecieContract.EspecieEntry.NOMBRECIENTIFICO));
                 @SuppressLint("Range") String familia = cursor.getString(cursor.getColumnIndex(EspecieContract.EspecieEntry.FAMILIA));
-                @SuppressLint("Range") boolean peligroExtincion = (cursor.getInt(cursor.getColumnIndex(EspecieContract.EspecieEntry.PELIGROEXTINCION))>0);
-                especie = new Especie( nombreVulgar, nombreCientifico, familia, peligroExtincion);
+                @SuppressLint("Range") int peligroExtincion = cursor.getInt(cursor.getColumnIndex(EspecieContract.EspecieEntry.PELIGROEXTINCION));
+                especie = new Especie( idESpecie, nombreVulgar, nombreCientifico, familia, peligroExtincion);
             }
         } catch (Exception exception) {
             // TODO: Se debe de implementar el trato de las exception
@@ -97,17 +104,17 @@ public class EspecieDbHelper extends ComunDbHelper{
         return especie;
     }
 
-    public int delete(String id) {
+    public int delete(int id) {
         return super.delete(EspecieContract.EspecieEntry.TABLE_NAME,
-                EspecieContract.EspecieEntry._ID + " = ?",
-                new String[]{id});
+                EspecieContract.EspecieEntry.IDESPECIE + " = ?",
+                new String[]{id+""});
     }
 
-    public int update(Zoo zoo, String id) {
+    public int update(Especie especie, int id) {
         return super.update(EspecieContract.EspecieEntry.TABLE_NAME,
-                zoo.toContentValues(),
-                EspecieContract.EspecieEntry._ID + " = ?",
-                new String[]{id});
+                especie.toContentValues(),
+                EspecieContract.EspecieEntry.IDESPECIE + " = ?",
+                new String[]{id+""});
     }
 
 }

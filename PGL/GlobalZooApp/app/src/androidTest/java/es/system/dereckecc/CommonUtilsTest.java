@@ -33,16 +33,8 @@ public class CommonUtilsTest {
             appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
             zoosDbHelper = new ZooDbHelper(appContext);
-            zoo = new Zoo(123, "zooDC", "afganistan", "St. Cruz", 879,900);
-            zoosDbHelper.save(zoo);
-
             especieDbHelper = new EspecieDbHelper(appContext);
-            especie = new Especie("jirafa", "jirafaCientifica", "jirafoides", false);
-            especieDbHelper.save(especie);
-
             animalDbHelper = new AnimalDbHelper(appContext);
-            animal = new Animal(1, "macho", "Finlandia", "Europa", 1800);
-            animalDbHelper.save(animal);
 
         }catch (Exception ex) {
             fail("Se ha producido un error creando el elemento:"+ex.getMessage());

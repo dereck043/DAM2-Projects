@@ -2,15 +2,27 @@ package es.system.dereckecc.vo;
 
 import android.content.ContentValues;
 
+import java.util.Objects;
+
 import es.system.dereckecc.model.interface1.IEspecie;
 import es.system.dereckecc.model.contracts.EspecieContract;
 
 public class Especie implements IEspecie {
     String nombreVulgar, nombreCientifico, familia;
-    int id;
-    boolean peligroExtincion;
+    int id, peligroExtincion;
 
-    public Especie(String nombreVulgar, String nombreCientifico, String familia, boolean peligroExtincion) {
+    public Especie() {
+    }
+
+    public Especie(String nombreVulgar, String nombreCientifico, String familia, int peligroExtincion) {
+        this.nombreVulgar = nombreVulgar;
+        this.nombreCientifico = nombreCientifico;
+        this.familia = familia;
+        this.peligroExtincion = peligroExtincion;
+    }
+
+    public Especie(int id, String nombreVulgar, String nombreCientifico, String familia, int peligroExtincion) {
+        this.id = id;
         this.nombreVulgar = nombreVulgar;
         this.nombreCientifico = nombreCientifico;
         this.familia = familia;
@@ -53,12 +65,17 @@ public class Especie implements IEspecie {
     }
 
     @Override
-    public boolean isPeligroExtincion() {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public int isPeligroExtincion() {
         return peligroExtincion;
     }
 
     @Override
-    public void setPeligroExtincion(boolean peligroExtincion) {
+    public void setPeligroExtincion(int peligroExtincion) {
         this.peligroExtincion = peligroExtincion;
     }
 
@@ -69,5 +86,16 @@ public class Especie implements IEspecie {
         values.put(EspecieContract.EspecieEntry.FAMILIA, familia);
         values.put(EspecieContract.EspecieEntry.PELIGROEXTINCION, peligroExtincion);
         return values;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Especie especie = (Especie) o;
+        return Objects.equals(nombreVulgar, especie.nombreVulgar)
+                && Objects.equals(nombreCientifico, especie.nombreCientifico)
+                && Objects.equals(familia, especie.familia)
+                && Objects.equals(peligroExtincion, especie.peligroExtincion);
     }
 }

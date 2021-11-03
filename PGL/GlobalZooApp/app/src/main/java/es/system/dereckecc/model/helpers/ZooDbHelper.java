@@ -28,7 +28,10 @@ public class ZooDbHelper extends ComunDbHelper {
         );
     }
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {}
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + ZooContract.ZooEntry.TABLE_NAME );
+        onCreate(sqLiteDatabase);
+    }
 
     public long save(Zoo zoo) {
         return super.save(ZooContract.ZooEntry.TABLE_NAME,
@@ -47,12 +50,13 @@ public class ZooDbHelper extends ComunDbHelper {
             if(cursor.moveToFirst()){
                 zoo = new ArrayList<>();
                 do {
+                    @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(ZooContract.ZooEntry.IDZOO));
                     @SuppressLint("Range") String nombre = cursor.getString(cursor.getColumnIndex(ZooContract.ZooEntry.NOMBRE));
                     @SuppressLint("Range") int dimensiones = cursor.getInt(cursor.getColumnIndex(ZooContract.ZooEntry.DIMENSIONES));
                     @SuppressLint("Range") String ciudad = cursor.getString(cursor.getColumnIndex(ZooContract.ZooEntry.CIUDAD));
                     @SuppressLint("Range") String pais = cursor.getString(cursor.getColumnIndex(ZooContract.ZooEntry.PAIS));
                     @SuppressLint("Range") int presupuestoAnual = cursor.getInt(cursor.getColumnIndex(ZooContract.ZooEntry.PRESUPUESTOANUAL));
-                    Zoo zooEntries = new Zoo( nombre, pais, ciudad, dimensiones, presupuestoAnual);
+                    Zoo zooEntries = new Zoo( id, nombre, pais, ciudad, dimensiones, presupuestoAnual);
                     zoo.add(zooEntries);
                 } while (cursor.moveToNext());
                 return zoo;
@@ -105,16 +109,16 @@ public class ZooDbHelper extends ComunDbHelper {
     }
 
 
-    public int delete(String id) {
+    public int delete(int id) {
         return super.delete(ZooContract.ZooEntry.TABLE_NAME,
-                ZooContract.ZooEntry._ID + " = ?",
-                new String[]{id});
+                ZooContract.ZooEntry.IDZOO + " = ?",
+                new String[]{id+""});
     }
 
-    public int update(Zoo zoo, String id) {
+    public int update(Zoo zoo, int id) {
         return super.update(ZooContract.ZooEntry.TABLE_NAME,
                 zoo.toContentValues(),
-                ZooContract.ZooEntry._ID + " = ?",
-                new String[]{id});
+                ZooContract.ZooEntry.IDZOO + " = ?",
+                new String[]{id+""});
     }
 }

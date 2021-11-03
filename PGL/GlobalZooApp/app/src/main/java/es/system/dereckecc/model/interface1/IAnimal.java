@@ -3,6 +3,9 @@ package es.system.dereckecc.model.interface1;
 import java.sql.Date;
 
 public interface IAnimal {
+
+    void setId(int id);
+
     int getId();
 
     int getIdEspecie();

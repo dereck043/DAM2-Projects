@@ -1,6 +1,7 @@
 package es.system.dereckecc.model.interface1;
 
 public interface IEspecie {
+
     String getNombreVulgar();
 
     void setNombreVulgar(String nombreVulgar);
@@ -13,9 +14,11 @@ public interface IEspecie {
 
     void setFamilia(String familia);
 
+    void setId(int id);
+
     int getId();
 
-    boolean isPeligroExtincion();
+    int isPeligroExtincion();
 
-    void setPeligroExtincion(boolean peligroExtincion);
+    void setPeligroExtincion(int peligroExtincion);
 }
