@@ -10,8 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GlobalZooApp">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".PantallaEspecie"
+            android:exported="true" />
+        <activity
+            android:name=".activity.PantallaZoo"
+            android:exported="true"
+            android:label="@string/pantallaZoo" />
+        <activity
+            android:name=".activity.PantallaAnimal"
+            android:exported="true"
+            android:label="@string/pantallaAnimales" />
+        <activity
+            android:name=".PantallaPrincipal"
+            android:exported="true"
+            android:label="@string/pantallaPrincipal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

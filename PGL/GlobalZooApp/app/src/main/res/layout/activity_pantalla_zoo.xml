@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.PantallaZoo">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/zooVolverMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="cambioPantallaAnterior"
+            android:text="@string/pasar_pantalla_main" />
+
+        <Button
+            android:id="@+id/zooCambioEspecie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pasar_pantalla_especie" />
+
+        <Button
+            android:id="@+id/zooCambioAnimal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="cambioPantallaAnimales"
+            android:text="@string/pasar_pantalla_animales" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

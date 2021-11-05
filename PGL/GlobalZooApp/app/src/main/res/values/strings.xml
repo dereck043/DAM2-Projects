@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">GlobalZooApp</string>
+
+    <string name="pantallaPrincipal">Global Zoo</string>
+    <string name="pantallaZoo">Zoos</string>
+    <string name="pantallaEspecie">Especies</string>
+    <string name="pantallaAnimales">Animales</string>
+
+    <string name="ir_guardar_nuevo_animal">Agregar nuevos Animales</string>
+    <string name="ir_actualizar_animal">Actualizar Animales</string>
+    <string name="ir_eliminar_animal">Eliminar Animales</string>
+
+    <string name="ir_guardar_nuevo_zoo">Agregar nuevos Zoos</string>
+    <string name="ir_actualizar_zoo">Actualizar Zoos</string>
+    <string name="ir_eliminar_zoo">Eliminar Zoos</string>
+
+    <string name="ir_guardar_nuevo_especie">Agregar nuevos Zoos</string>
+    <string name="ir_actualizar_especie">Actualizar Zoos</string>
+    <string name="ir_eliminar_especie">Eliminar Zoos</string>
+
+    <string name="pasar_pantalla_main">Ir a la seccion Principal</string>
+    <string name="pasar_pantalla_animales">Ir a la seccion de Animales</string>
+    <string name="pasar_pantalla_zoo">Ir a la seccion de Zoos</string>
+    <string name="pasar_pantalla_especie">Ir a la seccion de Especie</string>
 </resources>
