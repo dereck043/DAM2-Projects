@@ -9,16 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GlobalZooApp">
+
         <activity
-            android:name=".PantallaEspecie"
-            android:exported="true" />
+            android:name=".activity.PantallaEspecie"
+            android:exported="false"
+            android:label="@string/pantallaEspecie"/>
         <activity
             android:name=".activity.PantallaZoo"
-            android:exported="true"
+            android:exported="false"
+            android:parentActivityName=".PantallaPrincipal"
             android:label="@string/pantallaZoo" />
         <activity
             android:name=".activity.PantallaAnimal"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/pantallaAnimales" />
         <activity
             android:name=".PantallaPrincipal"

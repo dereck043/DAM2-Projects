@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_spa_24.xml" value="0.3645833333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_pantalla_add_zoo.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/activity_pantalla_animal.xml" value="0.3651041666666667" />
+        <entry key="app/src/main/res/layout/activity_pantalla_especie.xml" value="0.3651041666666667" />
         <entry key="app/src/main/res/layout/activity_pantalla_principal.xml" value="0.3651041666666667" />
-        <entry key="app/src/main/res/layout/activity_pantalla_zoo.xml" value="0.26666666666666666" />
+        <entry key="app/src/main/res/layout/activity_pantalla_zoo.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_pantalla_zoo2.xml" value="0.31145833333333334" />
       </map>
     </option>
   </component>

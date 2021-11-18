@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import es.system.dereckecc.activity.PantallaAnimal;
+import es.system.dereckecc.activity.PantallaEspecie;
 import es.system.dereckecc.activity.PantallaZoo;
 
 public class PantallaPrincipal extends AppCompatActivity {
@@ -29,6 +30,12 @@ public class PantallaPrincipal extends AppCompatActivity {
     public void cambioPantallaAnimales(View view) {
         Intent animalPantalla = new Intent(PantallaPrincipal.this,
                 PantallaAnimal.class);
+        startActivity(animalPantalla);
+    }
+
+    public void cambioPantallaEspecies(View view) {
+        Intent animalPantalla = new Intent(PantallaPrincipal.this,
+                PantallaEspecie.class);
         startActivity(animalPantalla);
     }
 

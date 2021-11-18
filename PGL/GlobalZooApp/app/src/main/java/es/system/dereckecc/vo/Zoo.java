@@ -92,7 +92,7 @@ public class Zoo implements IZoo {
 
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
-        values.put(ZooContract.ZooEntry.IDZOO, id);
+        //values.put(ZooContract.ZooEntry.IDZOO, id);
         values.put(ZooContract.ZooEntry.NOMBRE, nombre);
         values.put(ZooContract.ZooEntry.PAIS, pais);
         values.put(ZooContract.ZooEntry.CIUDAD, ciudad);

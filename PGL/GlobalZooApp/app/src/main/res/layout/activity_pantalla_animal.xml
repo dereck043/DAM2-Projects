@@ -6,29 +6,299 @@
     android:layout_height="match_parent"
     tools:context=".activity.PantallaAnimal">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="35dp">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/irGuardarNuevoAnimal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ir_guardar_nuevo_animal" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Nombre Animal" />
+
+                <TextView
+                    android:id="@+id/textView262"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Info Animal" />
+
+                <TextView
+                    android:id="@+id/textView273"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="info Animal" />
+
+                <ImageButton
+                    android:id="@+id/imageButton4"
+                    android:layout_width="44dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#00FFFFFF"
+                    app:srcCompat="@android:drawable/ic_delete" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Nombre Animal" />
+
+                <TextView
+                    android:id="@+id/textView266"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Info Animal" />
+
+                <TextView
+                    android:id="@+id/textView277"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="info Animal" />
+
+                <ImageButton
+                    android:id="@+id/imageButton8"
+                    android:layout_width="44dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#00FFFFFF"
+                    app:srcCompat="@android:drawable/ic_delete" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Nombre Animal" />
+
+                <TextView
+                    android:id="@+id/textView2610"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Info Animal" />
+
+                <TextView
+                    android:id="@+id/textView2711"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="info Animal" />
+
+                <ImageButton
+                    android:id="@+id/imageButton12"
+                    android:layout_width="44dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#00FFFFFF"
+                    app:srcCompat="@android:drawable/ic_delete" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView213"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Nombre Animal" />
+
+                <TextView
+                    android:id="@+id/textView2614"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Info Animal" />
+
+                <TextView
+                    android:id="@+id/textView2715"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="info Animal" />
+
+                <ImageButton
+                    android:id="@+id/imageButton16"
+                    android:layout_width="44dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#00FFFFFF"
+                    app:srcCompat="@android:drawable/ic_delete" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView217"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Nombre Animal" />
+
+                <TextView
+                    android:id="@+id/textView2618"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="Info Animal" />
+
+                <TextView
+                    android:id="@+id/textView2719"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="10dp"
+                    android:text="info Animal" />
+
+                <ImageButton
+                    android:id="@+id/imageButton20"
+                    android:layout_width="44dp"
+                    android:layout_height="38dp"
+                    android:backgroundTint="#00FFFFFF"
+                    app:srcCompat="@android:drawable/ic_delete" />
+            </TableRow>
+
+            <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:text="Nombre Animal" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:text="Info Animal" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="10dp"
+                android:text="info Animal" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="44dp"
+                android:layout_height="38dp"
+                android:backgroundTint="#00FFFFFF"
+                app:srcCompat="@android:drawable/ic_delete" />
+        </TableRow>
+        </TableLayout>
 
         <Button
             android:id="@+id/zooVolverMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="26dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="140dp"
+            android:layout_marginBottom="30dp"
             android:background="#2C673AB7"
             android:onClick="cambioPantallaAnterior"
             android:text="@string/pasar_pantalla_main"
             android:textColor="#BA000000" />
 
-    </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="25dp"
+            android:clickable="true"
+            android:tint="@android:color/white"
+            app:backgroundTint="#8497F8"
+            app:elevation="0dp"
+            app:srcCompat="@android:drawable/ic_menu_add" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
