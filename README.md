@@ -1,3 +1,3 @@
-Hi, here we have my dam projects :)
+Hi there, here my dam projects :)
 
 enjoy
